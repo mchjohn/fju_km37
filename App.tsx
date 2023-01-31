@@ -4,6 +4,8 @@ import { NativeBaseProvider } from 'native-base';
 import { Colors } from 'react-native/Libraries/NewAppScreen';
 import { SafeAreaView, StatusBar, useColorScheme } from 'react-native';
 
+import { theme } from '@styles/theme';
+
 import { Navigation } from '@routes/index';
 
 function App(): JSX.Element {
@@ -15,7 +17,7 @@ function App(): JSX.Element {
 
   return (
     <SafeAreaView style={[backgroundStyle, styles.container]}>
-      <NativeBaseProvider>
+      <NativeBaseProvider theme={theme}>
         <StatusBar
           barStyle={isDarkMode ? 'light-content' : 'dark-content'}
           backgroundColor={backgroundStyle.backgroundColor}
