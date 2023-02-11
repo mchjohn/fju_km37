@@ -20,7 +20,7 @@ export function YouthEncounterCard({
         overflow="hidden"
         borderColor="gray.100">
         <Box>
-          <AspectRatio w="100%" ratio={4 / 3}>
+          <AspectRatio w="100%" ratio={16 / 11}>
             <Image
               source={{
                 uri: url,

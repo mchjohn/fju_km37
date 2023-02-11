@@ -1,43 +1,41 @@
-import { Box, AspectRatio, Center, Image } from 'native-base';
+import LinearGradient from 'react-native-linear-gradient';
+import { StyleSheet } from 'react-native';
+import { Box, Center, Text } from 'native-base';
+
+import { theme } from '@styles/theme';
 
 type InfoCardWithTextProps = {
-  url: string;
   title: string;
+  colors?: (string | number)[];
+  verseInfo: string;
 };
 
-export function InfoCardWithText({ url, title }: InfoCardWithTextProps) {
+const defaultColors = [
+  theme.colors.primary[600],
+  theme.colors.primary[700],
+  theme.colors.primary[900],
+];
+
+export function InfoCardWithText({
+  title,
+  verseInfo,
+  colors = defaultColors,
+}: InfoCardWithTextProps) {
   return (
     <Box alignItems="center" my={4}>
       <Box
         w="100%"
+        minH={100}
         rounded="lg"
         borderWidth="1"
         overflow="hidden"
         borderColor="gray.100">
         <Box>
-          <AspectRatio w="100%" ratio={16 / 6}>
-            <Image
-              source={{
-                uri: url,
-              }}
-              resizeMode="stretch"
-              alt="Tema do encontro"
-            />
-          </AspectRatio>
-          <Center
-            px="3"
-            py="1.5"
-            top="0"
-            position="absolute"
-            _text={{
-              fontSize: 'md',
-              fontWeight: '700',
-              color: 'gray.50',
-            }}>
-            Quando isso acontecer, e vocês comerem e ficarem satisfeitos, tenham
-            cuidado! Não esqueçam o Senhor que os tirou do Egito, da terra da
-            escravidão.
-          </Center>
+          <LinearGradient colors={colors} style={styles.linearGradient}>
+            <Text fontSize="md" fontWeight="700" color="gray.50" mb={8}>
+              {title}
+            </Text>
+          </LinearGradient>
           <Center
             px="3"
             py="1.5"
@@ -50,10 +48,16 @@ export function InfoCardWithText({ url, title }: InfoCardWithTextProps) {
               fontWeight: '700',
               color: 'gray.50',
             }}>
-            {`${title} - Deuteronômio 6:11-12`}
+            {`Versículo do dia ${verseInfo}`}
           </Center>
         </Box>
       </Box>
     </Box>
   );
 }
+
+var styles = StyleSheet.create({
+  linearGradient: {
+    padding: 8,
+  },
+});

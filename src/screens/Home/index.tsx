@@ -1,28 +1,30 @@
 import { ScrollView } from 'native-base';
 
-import { bg_blue, duel_tribes } from '@constants/img_url';
+import { duel_tribes } from '@constants/img_url';
 
 import { Header } from '@components/Header';
 import { InfoCard } from '@components/InfoCard';
 import { InfoCardWithText } from '@components/InfoCardWithText';
 import { YouthEncounterCard } from '@components/YouthEncounterCard';
 
+import { useHome } from './useHome';
+
 export function Home() {
+  const { textVerse, verseInfo } = useHome('nvi');
+
   return (
     <ScrollView
       px={4}
       pt={2}
-      pb={10}
-      // style={{ marginBottom: 20 }}
-      showsVerticalScrollIndicator={false}
-      bg="light.100">
+      bg="light.100"
+      showsVerticalScrollIndicator={false}>
       <Header title="Início" />
 
       <YouthEncounterCard title="Encontro Jovem - Domingo dia 12 às 16 horas" />
 
       <InfoCard url={duel_tribes} title="Duelo das Tribos" />
 
-      <InfoCardWithText url={bg_blue} title="Versículo do dia" />
+      <InfoCardWithText title={textVerse} verseInfo={verseInfo} />
     </ScrollView>
   );
 }
