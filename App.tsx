@@ -1,8 +1,7 @@
 import React from 'react';
-import { StyleSheet } from 'react-native';
 import { NativeBaseProvider } from 'native-base';
+import { StatusBar, useColorScheme } from 'react-native';
 import { Colors } from 'react-native/Libraries/NewAppScreen';
-import { SafeAreaView, StatusBar, useColorScheme } from 'react-native';
 
 import { theme } from '@styles/theme';
 
@@ -16,23 +15,14 @@ function App(): JSX.Element {
   };
 
   return (
-    <SafeAreaView style={[backgroundStyle, styles.container]}>
-      <NativeBaseProvider theme={theme}>
-        <StatusBar
-          barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-          backgroundColor={backgroundStyle.backgroundColor}
-        />
-        <Navigation />
-      </NativeBaseProvider>
-    </SafeAreaView>
+    <NativeBaseProvider theme={theme}>
+      <StatusBar
+        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
+        backgroundColor={backgroundStyle.backgroundColor}
+      />
+      <Navigation />
+    </NativeBaseProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-  },
-});
 
 export default App;
