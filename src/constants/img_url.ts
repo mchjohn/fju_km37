@@ -1,6 +1,3 @@
-export const bg_blue =
-  'https://firebasestorage.googleapis.com/v0/b/fju-km37.appspot.com/o/informative%2Fbg_blue.png?alt=media&token=0eba2527-64f5-4a1f-98d2-3e7ed0189318';
-
 export const duel_tribes =
   'https://firebasestorage.googleapis.com/v0/b/fju-km37.appspot.com/o/informative%2Fbenjamin_x_juda.png?alt=media&token=3e118987-e264-4c87-8428-45a5cd73e7d8';
 

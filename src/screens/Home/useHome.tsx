@@ -11,6 +11,7 @@ export function useHome(version: Version) {
   const { data: verseOfTheDay } = useQuery(
     [QueryKeys.VERSE_OF_THE_DAY, version],
     () => VerseOfTheDayService.getRandomVerse(version),
+    { staleTime: 86400000 },
   );
 
   const verseInfo = useMemo(() => {
