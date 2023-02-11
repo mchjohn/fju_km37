@@ -1,15 +1,14 @@
-import { Text, View } from 'react-native';
+import { Box } from 'native-base';
 
-import { useHome } from './useHome';
+import { Card } from '@components/Card';
+import { Header } from '@components/Header';
 
 export function Home() {
-  const { teams } = useHome();
-
   return (
-    <View>
-      {teams.map(({ team }) => (
-        <Text key={team.id}>{team.name}</Text>
-      ))}
-    </View>
+    <Box h="full" px={4} bg="light.100">
+      <Header title="Início" />
+
+      <Card title="Encontro Jovem - Domingo dia 12 às 16 horas" />
+    </Box>
   );
 }

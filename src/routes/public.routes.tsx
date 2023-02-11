@@ -2,6 +2,8 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import { Home } from '@screens/Home/index';
 import { Games } from '@screens/Games';
+import { ChurchInfo } from '@screens/ChurchInfo';
+import { YouthEncounter } from '@screens/YouthEncounter';
 
 import { PropsNavigationBottom } from './Models';
 import { options, screenIcon } from './config/options';
@@ -19,11 +21,25 @@ export function PublicNavigation() {
         }}
       />
       <Screen
+        name="YouthEncounter"
+        component={YouthEncounter}
+        options={{
+          tabBarIcon: ({ color, size }) => screenIcon('people', color, size),
+        }}
+      />
+      <Screen
         name="Games"
         component={Games}
         options={{
           tabBarIcon: ({ color, size }) =>
             screenIcon('game-controller', color, size),
+        }}
+      />
+      <Screen
+        name="ChurchInfo"
+        component={ChurchInfo}
+        options={{
+          tabBarIcon: ({ color, size }) => screenIcon('location', color, size),
         }}
       />
     </Navigator>
