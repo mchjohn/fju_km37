@@ -1,4 +1,4 @@
-import { Box, HStack, Heading } from 'native-base';
+import { HStack, Heading } from 'native-base';
 
 import Fju_km37_logo from '../../assets/imgs/fju_km37_logo.svg';
 
@@ -8,12 +8,10 @@ type HeaderProps = {
 
 export function Header({ title }: HeaderProps) {
   return (
-    <HStack justifyContent="space-between">
-      <Heading height={83}>{title}</Heading>
+    <HStack maxH={62} mb={2} justifyContent="space-between" alignItems="center">
+      <Heading>{title}</Heading>
 
-      <Box mt={-4}>
-        <Fju_km37_logo width={180} />
-      </Box>
+      <Fju_km37_logo width={180} />
     </HStack>
   );
 }
