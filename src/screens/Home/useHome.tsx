@@ -1,24 +1,28 @@
-import { useEffect, useState } from 'react';
+import { useMemo } from 'react';
+import { useQuery } from '@tanstack/react-query';
 
-import { Team } from '@interfaces/team';
+import { Version } from '@interfaces/verse';
+import { QueryKeys } from '@services/QueryKeys';
+import { VerseOfTheDayService } from '@services/VerseOfTheDayService';
 
-import { getTeamsFromFirestore } from '@services/TeamsService';
+import { defaultVerse, defaultVerseInfo } from '@constants/verse';
 
-export function useHome() {
-  const [teams, setTeams] = useState([] as Team[]);
+export function useHome(version: Version) {
+  const { data: verseOfTheDay } = useQuery(
+    [QueryKeys.VERSE_OF_THE_DAY, version],
+    () => VerseOfTheDayService.getRandomVerse(version),
+    { staleTime: 86400000 },
+  );
 
-  async function getTeams() {
-    try {
-      const data = await getTeamsFromFirestore();
-      setTeams(data);
-    } catch (error) {
-      console.error('Error', error);
-    }
-  }
+  const verseInfo = useMemo(() => {
+    return verseOfTheDay
+      ? `${verseOfTheDay?.book?.name} ${verseOfTheDay?.chapter}:${verseOfTheDay?.number}`
+      : defaultVerseInfo;
+  }, [verseOfTheDay]);
 
-  useEffect(() => {
-    getTeams();
-  }, []);
+  const textVerse = useMemo(() => {
+    return verseOfTheDay ? `${verseOfTheDay?.text}` : defaultVerse;
+  }, [verseOfTheDay]);
 
-  return { teams };
+  return { textVerse, verseInfo };
 }
