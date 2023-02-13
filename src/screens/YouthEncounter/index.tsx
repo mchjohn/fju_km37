@@ -9,7 +9,7 @@ export function YouthEncounter() {
     <Box px={4} flex={1}>
       <Header title="Encontro" />
 
-      <ScrollView pt={2} showsVerticalScrollIndicator={false}>
+      <ScrollView bg="light.100" pt={2} showsVerticalScrollIndicator={false}>
         <Chat />
       </ScrollView>
     </Box>

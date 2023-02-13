@@ -7,7 +7,7 @@ type ChatMessagePhotoProps = {
 
 export function ChatMessagePhoto({ uri1, uri2 }: ChatMessagePhotoProps) {
   return (
-    <HStack space={2} mb={2}>
+    <HStack space={2}>
       <Image
         source={{
           uri: uri1,
