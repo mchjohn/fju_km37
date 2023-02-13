@@ -13,4 +13,4 @@ interface Team {
   };
 }
 
-export type {Team, Player};
+export type { Team, Player };

@@ -83,7 +83,8 @@ export function Chat() {
         borderRadiusLeft={0}
         borderRadiusRight={8}
         uri={avatar_fju}
-        message="Se liga só nas fotos que top!">
+        message="Se liga só nas fotos que top!"
+      >
         <ChatMessagePhoto uri1={chat_photo} uri2={chat_photo} />
       </ChatMessage>
     </VStack>
