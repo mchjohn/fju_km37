@@ -8,7 +8,14 @@ type HeaderProps = {
 
 export function Header({ title }: HeaderProps) {
   return (
-    <HStack maxH={62} mb={2} justifyContent="space-between" alignItems="center">
+    <HStack
+      mb={2}
+      maxH={64}
+      alignItems="center"
+      justifyContent="space-between"
+      borderBottomWidth={2}
+      borderBottomColor="gray.200"
+    >
       <Heading>{title}</Heading>
 
       <Fju_km37_logo width={180} />

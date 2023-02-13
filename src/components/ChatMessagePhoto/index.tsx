@@ -7,7 +7,7 @@ type ChatMessagePhotoProps = {
 
 export function ChatMessagePhoto({ uri1, uri2 }: ChatMessagePhotoProps) {
   return (
-    <HStack space={2} mb={2}>
+    <HStack space={2}>
       <Image
         source={{
           uri: uri1,
@@ -28,7 +28,7 @@ export function ChatMessagePhoto({ uri1, uri2 }: ChatMessagePhotoProps) {
           />
           <Center bg="gray.800" opacity={0.7} size="24" rounded="lg" />
           <Text color="white" fontSize="2xl" fontWeight="700">
-            +10
+            +8
           </Text>
         </ZStack>
       </Center>

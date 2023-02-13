@@ -14,6 +14,7 @@ export function YouthEncounterCard({
   return (
     <Box alignItems="center">
       <Box
+        mt={4}
         w="100%"
         rounded="lg"
         borderWidth="1"
