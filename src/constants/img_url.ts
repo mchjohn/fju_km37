@@ -12,3 +12,6 @@ export const avatar_default =
 
 export const chat_photo =
   'https://firebasestorage.googleapis.com/v0/b/fju-km37.appspot.com/o/general%2Ffju_km37_bandeiras.jpeg?alt=media&token=225490b9-a706-491d-8a4a-64592f59a818';
+
+export const iurd_km37 =
+  'https://firebasestorage.googleapis.com/v0/b/fju-km37.appspot.com/o/general%2Fiurd_km37.png?alt=media&token=fbf9511b-f5d1-4246-982d-45e708635507';

@@ -9,18 +9,18 @@ export function Chat() {
   return (
     <VStack space={2} mb={8}>
       <ChatMessage
+        align="flex-end"
+        color="gray.500"
         reversed={false}
         borderRadiusLeft={8}
         borderRadiusRight={0}
-        align="flex-end"
-        color="gray.500"
         message="O que é o encontro jovem?"
       />
 
       <ChatMessage
+        uri={avatar_fju}
         borderRadiusLeft={0}
         borderRadiusRight={8}
-        uri={avatar_fju}
         message="Uma reunião diferenciada voltada para jovens."
       />
 
@@ -37,7 +37,7 @@ export function Chat() {
         borderRadiusLeft={0}
         borderRadiusRight={8}
         uri={avatar_fju}
-        message="Jovens com 15 anos ou mais. Se tu curte cantar, dançar pular, jogar bola, vôlei... Aqui fazemos tudo isso na presença do Senhor."
+        message="Jovens com 15 anos ou mais. Se tu curte esporte, cantar, dançar, pular... Aqui fazemos tudo isso na presença de Deus."
       />
 
       <ChatMessage
@@ -76,7 +76,7 @@ export function Chat() {
         borderRadiusLeft={0}
         borderRadiusRight={8}
         uri={avatar_fju}
-        message="Vou te mandar umas fotos dos encontros pra tu ver como fica muito top."
+        message="Vou te mandar umas fotos dos encontros pra tu ver como que fica muito top."
       />
 
       <ChatMessage
