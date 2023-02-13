@@ -27,17 +27,19 @@ export function ChatMessage({
   return (
     <HStack
       space={2}
+      reversed={reversed}
       alignItems="center"
       justifyContent={align}
-      reversed={reversed}>
+    >
       <Box
         py={2}
         px={4}
-        maxW={64}
         bg={color}
+        maxW={64}
         borderRadius={8}
         borderTopLeftRadius={borderRadiusLeft}
-        borderTopRightRadius={borderRadiusRight}>
+        borderTopRightRadius={borderRadiusRight}
+      >
         {children}
         <Text color="white" fontWeight="700">
           {message}
@@ -48,7 +50,8 @@ export function ChatMessage({
         source={{
           uri: uri,
         }}
-        size="sm">
+        size="sm"
+      >
         FJU
         <Avatar.Badge bg="green.500" />
       </Avatar>

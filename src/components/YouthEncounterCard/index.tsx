@@ -18,7 +18,8 @@ export function YouthEncounterCard({
         rounded="lg"
         borderWidth="1"
         overflow="hidden"
-        borderColor="gray.100">
+        borderColor="gray.100"
+      >
         <Box>
           <AspectRatio w="100%" ratio={16 / 11}>
             <Image
@@ -40,7 +41,8 @@ export function YouthEncounterCard({
               fontSize: 'xs',
               fontWeight: '700',
               color: 'gray.50',
-            }}>
+            }}
+          >
             {title}
           </Center>
         </Box>

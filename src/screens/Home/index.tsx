@@ -17,7 +17,8 @@ export function Home() {
       px={4}
       pt={2}
       bg="light.100"
-      showsVerticalScrollIndicator={false}>
+      showsVerticalScrollIndicator={false}
+    >
       <Header title="Início" />
 
       <YouthEncounterCard title="Encontro Jovem - Domingo dia 12 às 16 horas" />

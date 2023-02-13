@@ -11,9 +11,10 @@ export function InfoCard({ url, title }: InfoCardProps) {
       <Box
         w="100%"
         rounded="lg"
-        borderWidth="1"
         overflow="hidden"
-        borderColor="gray.100">
+        borderWidth="1"
+        borderColor="gray.100"
+      >
         <Box>
           <AspectRatio w="100%" ratio={16 / 9}>
             <Image
@@ -27,15 +28,16 @@ export function InfoCard({ url, title }: InfoCardProps) {
           <Center
             px="3"
             py="1.5"
-            bottom="0"
-            roundedTopRight={4}
             bg="secondary.500"
+            bottom="0"
             position="absolute"
+            roundedTopRight={4}
             _text={{
               fontSize: 'xs',
-              fontWeight: '700',
               color: 'gray.50',
-            }}>
+              fontWeight: '700',
+            }}
+          >
             {title}
           </Center>
         </Box>

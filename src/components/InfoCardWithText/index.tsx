@@ -29,7 +29,8 @@ export function InfoCardWithText({
         rounded="lg"
         borderWidth="1"
         overflow="hidden"
-        borderColor="gray.100">
+        borderColor="gray.100"
+      >
         <Box>
           <LinearGradient colors={colors} style={styles.linearGradient}>
             <Text fontSize="md" fontWeight="700" color="gray.50" mb={8}>
@@ -47,7 +48,8 @@ export function InfoCardWithText({
               fontSize: 'xs',
               fontWeight: '700',
               color: 'gray.50',
-            }}>
+            }}
+          >
             {`Versículo do dia ${verseInfo}`}
           </Center>
         </Box>
