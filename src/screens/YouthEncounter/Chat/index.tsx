@@ -79,14 +79,13 @@ export function Chat() {
         message="Vou te mandar umas fotos dos encontros pra tu ver como fica muito top."
       />
 
-      <ChatMessagePhoto
-        uri1={chat_photo}
-        uri2={chat_photo}
-        avatar_uri={avatar_fju}
+      <ChatMessage
         borderRadiusLeft={0}
         borderRadiusRight={8}
-        message="Se liga só nas fotos."
-      />
+        uri={avatar_fju}
+        message="Se liga só nas fotos que top!">
+        <ChatMessagePhoto uri1={chat_photo} uri2={chat_photo} />
+      </ChatMessage>
     </VStack>
   );
 }

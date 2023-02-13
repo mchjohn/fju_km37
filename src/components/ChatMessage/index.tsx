@@ -1,4 +1,5 @@
-import { HStack, Text, Avatar, Center } from 'native-base';
+import { ReactNode } from 'react';
+import { HStack, Text, Avatar, Box } from 'native-base';
 
 import { avatar_default } from '@constants/img_url';
 
@@ -7,6 +8,7 @@ type ChatMessageProps = {
   color?: string;
   align?: 'flex-start' | 'flex-end';
   message: string;
+  children?: ReactNode;
   reversed?: boolean;
   borderRadiusLeft: number;
   borderRadiusRight: number;
@@ -17,6 +19,7 @@ export function ChatMessage({
   color = 'primary.500',
   align = 'flex-start',
   message,
+  children,
   reversed = true,
   borderRadiusLeft,
   borderRadiusRight,
@@ -27,7 +30,7 @@ export function ChatMessage({
       alignItems="center"
       justifyContent={align}
       reversed={reversed}>
-      <Center
+      <Box
         py={2}
         px={4}
         maxW={64}
@@ -35,10 +38,11 @@ export function ChatMessage({
         borderRadius={8}
         borderTopLeftRadius={borderRadiusLeft}
         borderTopRightRadius={borderRadiusRight}>
+        {children}
         <Text color="white" fontWeight="700">
           {message}
         </Text>
-      </Center>
+      </Box>
       <Avatar
         bg="primary.500"
         source={{
