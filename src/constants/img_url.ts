@@ -15,3 +15,9 @@ export const chat_photo =
 
 export const iurd_km37 =
   'https://firebasestorage.googleapis.com/v0/b/fju-km37.appspot.com/o/general%2Fiurd_km37.png?alt=media&token=fbf9511b-f5d1-4246-982d-45e708635507';
+
+export const flag_benjamin =
+  'https://firebasestorage.googleapis.com/v0/b/fju-km37.appspot.com/o/general%2Fflag_benjamin_min.png?alt=media&token=bc2f4caf-60e3-46a4-ac28-c6ebc1dddf9d';
+
+export const flag_juda =
+  'https://firebasestorage.googleapis.com/v0/b/fju-km37.appspot.com/o/general%2Fflag_juda_min.png?alt=media&token=9f57df2f-615d-4ec8-be38-85c0d61b4a6b';
