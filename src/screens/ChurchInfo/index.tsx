@@ -11,10 +11,10 @@ import { PhotoGallery } from './PhotoGallery';
 
 export function ChurchInfo() {
   return (
-    <Box px={4} pb={2} flex={1} bg="light.100">
+    <Box pb={2} flex={1} bg="light.100">
       <Header title="Informações" />
 
-      <ScrollView bg="light.100" showsVerticalScrollIndicator={false}>
+      <ScrollView px={4} bg="light.100" showsVerticalScrollIndicator={false}>
         <InfoCard
           url={iurd_km37}
           title="Estr. Humaitá, 25 - L 15 Q 25 - Lagoinha, Nova Iguaçu, RJ"

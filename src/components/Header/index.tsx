@@ -10,6 +10,7 @@ export function Header({ title }: HeaderProps) {
   return (
     <HStack
       mb={2}
+      mx={4}
       maxH={64}
       alignItems="center"
       justifyContent="space-between"

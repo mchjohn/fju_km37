@@ -13,10 +13,10 @@ export function Home() {
   const { textVerse, verseInfo } = useHome('nvi');
 
   return (
-    <Box px={4} flex={1}>
+    <Box flex={1}>
       <Header title="Início" />
 
-      <ScrollView bg="light.100" showsVerticalScrollIndicator={false}>
+      <ScrollView px={4} bg="light.100" showsVerticalScrollIndicator={false}>
         <YouthEncounterCard title="Encontro Jovem - Domingo dia 12 às 16 horas" />
 
         <InfoCard url={duel_tribes} title="Duelo das Tribos" />
