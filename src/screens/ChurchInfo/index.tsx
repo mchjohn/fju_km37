@@ -1,13 +1,13 @@
 import { Box, HStack, Heading, ScrollView } from 'native-base';
 
-import { iurd_km37 } from '@constants/img_url';
+import { iurd_km37, youth_encounter } from '@constants/img_url';
 
 import { Header } from '@components/Header';
 import { InfoCard } from '@components/InfoCard';
 import { SocialIcon } from '@components/SocialIcon';
+import { PhotoGallery } from '@components/PhotoGallery';
 
 import { Meetings } from './Meetings';
-import { PhotoGallery } from './PhotoGallery';
 
 export function ChurchInfo() {
   return (
@@ -22,7 +22,11 @@ export function ChurchInfo() {
 
         <Meetings />
 
-        <PhotoGallery />
+        <PhotoGallery
+          title="Galeria"
+          uri1={youth_encounter}
+          uri2={youth_encounter}
+        />
 
         <Box mt={4}>
           <Heading size="md" color="primary.800" mb={1}>

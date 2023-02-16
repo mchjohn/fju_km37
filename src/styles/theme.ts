@@ -30,5 +30,8 @@ export const theme = extendTheme({
       juda: '#182E31',
       benjamin: '#652D3D',
     },
+    yellow: {
+      200: '#EACA86',
+    },
   },
 });

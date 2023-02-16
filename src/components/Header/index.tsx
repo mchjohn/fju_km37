@@ -17,7 +17,7 @@ export function Header({ title }: HeaderProps) {
       borderBottomWidth={2}
       borderBottomColor="gray.200"
     >
-      <Heading>{title}</Heading>
+      <Heading color="primary.800">{title}</Heading>
 
       <Fju_km37_logo width={180} />
     </HStack>

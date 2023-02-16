@@ -5,7 +5,7 @@ import { TimeCard } from '@components/TimeCard';
 export function Meetings() {
   return (
     <Box mt={4}>
-      <Heading size="md" mb={2}>
+      <Heading size="md" mb={2} color="primary.800">
         Reuniões
       </Heading>
 
