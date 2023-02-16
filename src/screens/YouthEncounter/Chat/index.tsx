@@ -3,7 +3,7 @@ import { VStack } from 'native-base';
 import { avatar_fju, chat_photo } from '@constants/img_url';
 
 import { ChatMessage } from '@components/ChatMessage';
-import { ChatMessagePhoto } from '@components/ChatMessagePhoto';
+import { PhotoGallery } from '@components/PhotoGallery';
 
 export function Chat() {
   return (
@@ -85,7 +85,7 @@ export function Chat() {
         uri={avatar_fju}
         message="Se liga só nas fotos que top!"
       >
-        <ChatMessagePhoto uri1={chat_photo} uri2={chat_photo} />
+        <PhotoGallery uri1={chat_photo} uri2={chat_photo} />
       </ChatMessage>
     </VStack>
   );

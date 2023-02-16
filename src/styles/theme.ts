@@ -26,5 +26,12 @@ export const theme = extendTheme({
       800: '#490206',
       900: '#1f0000',
     },
+    flag: {
+      juda: '#182E31',
+      benjamin: '#652D3D',
+    },
+    yellow: {
+      200: '#EACA86',
+    },
   },
 });

@@ -10,13 +10,14 @@ export function Header({ title }: HeaderProps) {
   return (
     <HStack
       mb={2}
+      mx={4}
       maxH={64}
       alignItems="center"
       justifyContent="space-between"
       borderBottomWidth={2}
       borderBottomColor="gray.200"
     >
-      <Heading>{title}</Heading>
+      <Heading color="primary.800">{title}</Heading>
 
       <Fju_km37_logo width={180} />
     </HStack>

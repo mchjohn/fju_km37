@@ -6,10 +6,15 @@ import { Chat } from './Chat';
 
 export function YouthEncounter() {
   return (
-    <Box px={4} flex={1}>
+    <Box flex={1}>
       <Header title="Encontro" />
 
-      <ScrollView bg="light.100" pt={2} showsVerticalScrollIndicator={false}>
+      <ScrollView
+        px={4}
+        pt={2}
+        bg="light.100"
+        showsVerticalScrollIndicator={false}
+      >
         <Chat />
       </ScrollView>
     </Box>
