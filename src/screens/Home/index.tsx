@@ -10,14 +10,14 @@ import { YouthEncounterCard } from '@components/YouthEncounterCard';
 import { useHome } from './useHome';
 
 export function Home() {
-  const { textVerse, verseInfo } = useHome('nvi');
+  const { textVerse, verseInfo, youthEncounterData } = useHome('nvi');
 
   return (
     <Box flex={1}>
       <Header title="Início" />
 
       <ScrollView px={4} bg="light.100" showsVerticalScrollIndicator={false}>
-        <YouthEncounterCard title="Encontro Jovem - Domingo dia 12 às 16 horas" />
+        <YouthEncounterCard info={youthEncounterData} />
 
         <InfoCard url={duel_tribes} title="Duelo das Tribos" />
 
