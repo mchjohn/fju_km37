@@ -1,4 +1,16 @@
-import { HStack, Text, Center, Image, ZStack, Box, Heading } from 'native-base';
+import ImageView from 'react-native-image-viewing';
+import {
+  Text,
+  Image,
+  HStack,
+  Center,
+  ZStack,
+  Heading,
+  Pressable,
+  useDisclose,
+} from 'native-base';
+
+import { theme } from '@styles/theme';
 
 type PhotoGalleryProps = {
   uri1: string;
@@ -13,8 +25,19 @@ export function PhotoGallery({
   title,
   textColor = 'primary.800',
 }: PhotoGalleryProps) {
+  const { isOpen, onOpen, onClose } = useDisclose();
+
+  const images = [
+    {
+      uri: uri1,
+    },
+    {
+      uri: uri2,
+    },
+  ];
+
   return (
-    <Box>
+    <Pressable onPress={onOpen}>
       {title && (
         <Heading mt={4} mb={2} size="md" color={textColor}>
           {title}
@@ -47,6 +70,22 @@ export function PhotoGallery({
           </ZStack>
         </Center>
       </HStack>
-    </Box>
+
+      <ImageView
+        images={images}
+        imageIndex={0}
+        visible={isOpen}
+        // eslint-disable-next-line react/no-unstable-nested-components
+        FooterComponent={({ imageIndex }) => (
+          <Center pb={4}>
+            <Text fontSize="md" color="white" fontWeight={700}>
+              {imageIndex + 1} / {images.length}
+            </Text>
+          </Center>
+        )}
+        backgroundColor={theme.colors.primary['800']}
+        onRequestClose={onClose}
+      />
+    </Pressable>
   );
 }
