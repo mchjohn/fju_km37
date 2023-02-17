@@ -2,7 +2,7 @@ import { Box, Heading, ScrollView, VStack } from 'native-base';
 
 import TextGradient from '../../assets/imgs/chose_tribe_text.svg';
 
-import { chat_photo } from '@constants/img_url';
+import { chat_photo, iurd_km37 } from '@constants/img_url';
 
 import { FlagsCard } from './FlagsCard';
 import { Header } from '@components/Header';
@@ -35,7 +35,7 @@ export function Games() {
             title="Fotos"
             textColor="white"
             uri1={chat_photo}
-            uri2={chat_photo}
+            uri2={iurd_km37}
           />
 
           <VideoGallery
