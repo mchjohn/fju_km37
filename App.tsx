@@ -1,8 +1,10 @@
+/* eslint-disable react-native/no-inline-styles */
 import type { AppStateStatus } from 'react-native';
 import React, { useEffect } from 'react';
 import NetInfo from '@react-native-community/netinfo';
 import { NativeBaseProvider } from 'native-base';
 import { Colors } from 'react-native/Libraries/NewAppScreen';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { StatusBar, AppState, Platform, useColorScheme } from 'react-native';
 import {
   QueryClient,
@@ -49,7 +51,9 @@ function App(): JSX.Element {
         backgroundColor={backgroundStyle.backgroundColor}
       />
       <QueryClientProvider client={queryClient}>
-        <Navigation />
+        <GestureHandlerRootView style={{ flex: 1 }}>
+          <Navigation />
+        </GestureHandlerRootView>
       </QueryClientProvider>
     </NativeBaseProvider>
   );
