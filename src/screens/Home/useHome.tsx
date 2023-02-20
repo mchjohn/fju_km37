@@ -3,6 +3,7 @@ import { useQuery } from '@tanstack/react-query';
 
 import { QueryKeys } from '@services/QueryKeys';
 import { VerseOfTheDayService } from '@services/VerseOfTheDayService';
+import { getNewsDataFromFirestore } from '@services/firebase/NewsService';
 import { getYouthEncounterDataFromFirestore } from '@services/firebase/YouthEncounterService';
 
 import { parseVerseInfo, parseVerseText } from './utils/verse_the_day';
@@ -11,6 +12,11 @@ export function useHome() {
   const { data: youthEncounterData } = useQuery(
     [QueryKeys.YOUTH_ENCOUNTER],
     getYouthEncounterDataFromFirestore,
+  );
+
+  const { data: newsData, isLoading: isLoadingNews } = useQuery(
+    [QueryKeys.NEWS],
+    getNewsDataFromFirestore,
   );
 
   const { data: verseOfTheDay } = useQuery(
@@ -29,5 +35,5 @@ export function useHome() {
     [verseOfTheDay],
   );
 
-  return { textVerse, verseInfo, youthEncounterData };
+  return { newsData, textVerse, verseInfo, isLoadingNews, youthEncounterData };
 }
