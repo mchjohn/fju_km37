@@ -10,7 +10,7 @@ import { YouthEncounterCard } from '@components/YouthEncounterCard';
 import { useHome } from './useHome';
 
 export function Home() {
-  const { textVerse, verseInfo, youthEncounterData } = useHome('nvi');
+  const { textVerse, verseInfo, youthEncounterData } = useHome();
 
   return (
     <Box flex={1}>
