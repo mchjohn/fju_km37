@@ -1,4 +1,5 @@
 export enum QueryKeys {
+  NEWS = 'NEWS',
   YOUTH_ENCOUNTER = 'YOUTH_ENCOUNTER',
   VERSE_OF_THE_DAY = 'VERSE_OF_THE_DAY',
 }

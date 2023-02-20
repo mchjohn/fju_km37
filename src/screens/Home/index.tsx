@@ -1,16 +1,14 @@
 import { Box, ScrollView } from 'native-base';
 
-import { duel_tribes } from '@constants/img_url';
-
+import Carrousel from '@components/Carrousel';
 import { Header } from '@components/Header';
-import { InfoCard } from '@components/InfoCard';
 import { InfoCardWithText } from '@components/InfoCardWithText';
 import { YouthEncounterCard } from '@components/YouthEncounterCard';
 
 import { useHome } from './useHome';
 
 export function Home() {
-  const { textVerse, verseInfo, youthEncounterData } = useHome();
+  const { newsData, textVerse, verseInfo, youthEncounterData } = useHome();
 
   return (
     <Box flex={1}>
@@ -19,7 +17,7 @@ export function Home() {
       <ScrollView px={4} bg="light.100" showsVerticalScrollIndicator={false}>
         <YouthEncounterCard info={youthEncounterData} />
 
-        <InfoCard url={duel_tribes} title="Duelo das Tribos" />
+        <Carrousel news={newsData} />
 
         <InfoCardWithText title={textVerse} verseInfo={verseInfo} />
       </ScrollView>
