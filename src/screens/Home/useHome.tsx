@@ -14,7 +14,7 @@ export function useHome() {
     getYouthEncounterDataFromFirestore,
   );
 
-  const { data: newsData } = useQuery(
+  const { data: newsData, isLoading: isLoadingNews } = useQuery(
     [QueryKeys.NEWS],
     getNewsDataFromFirestore,
   );
@@ -35,5 +35,5 @@ export function useHome() {
     [verseOfTheDay],
   );
 
-  return { newsData, textVerse, verseInfo, youthEncounterData };
+  return { newsData, textVerse, verseInfo, isLoadingNews, youthEncounterData };
 }

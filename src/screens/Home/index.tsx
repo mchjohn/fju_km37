@@ -8,7 +8,8 @@ import { YouthEncounterCard } from '@components/YouthEncounterCard';
 import { useHome } from './useHome';
 
 export function Home() {
-  const { newsData, textVerse, verseInfo, youthEncounterData } = useHome();
+  const { newsData, textVerse, verseInfo, isLoadingNews, youthEncounterData } =
+    useHome();
 
   return (
     <Box flex={1}>
@@ -17,7 +18,7 @@ export function Home() {
       <ScrollView px={4} bg="light.100" showsVerticalScrollIndicator={false}>
         <YouthEncounterCard info={youthEncounterData} />
 
-        <Carrousel news={newsData} />
+        <Carrousel news={newsData} isLoading={isLoadingNews} />
 
         <InfoCardWithText title={textVerse} verseInfo={verseInfo} />
       </ScrollView>

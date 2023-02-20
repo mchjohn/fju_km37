@@ -22,7 +22,7 @@ export function InfoCard({ url, title, description }: InfoCardProps) {
     <>
       <Button
         p={0}
-        mt={4}
+        mt={2}
         onPress={onOpen}
         variant="unstyled"
         alignItems="center"

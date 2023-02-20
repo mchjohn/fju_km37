@@ -1,7 +1,8 @@
-import { Box, AspectRatio, Center, Image, Skeleton } from 'native-base';
+import { Box, AspectRatio, Center, Image } from 'native-base';
 
 import { IYouthEncounter } from '@interfaces/youth_encounter';
 
+import { Skeleton } from '@components/Skeleton';
 import { Transition } from '@components/Transition';
 
 type CardProps = {
@@ -50,13 +51,7 @@ export function YouthEncounterCard({ info }: CardProps) {
           </Box>
         </Transition>
       ) : (
-        <Skeleton
-          mt={2}
-          h="224px"
-          rounded="lg"
-          endColor="gray.400"
-          startColor="gray.300"
-        />
+        <Skeleton />
       )}
     </Box>
   );
