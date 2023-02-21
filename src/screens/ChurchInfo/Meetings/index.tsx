@@ -1,8 +1,18 @@
 import { Box, HStack, Heading, ScrollView } from 'native-base';
 
+import { IMeetings } from '@interfaces/church';
+import { default_meetings } from '@constants/church';
+
 import { TimeCard } from '@components/TimeCard';
 
-export function Meetings() {
+type MeetingsProps = {
+  meetings: IMeetings[] | undefined;
+  isLoading: boolean;
+};
+
+export function Meetings({ meetings, isLoading }: MeetingsProps) {
+  const renderMeetings = meetings ? meetings : default_meetings;
+
   return (
     <Box mt={4}>
       <Heading size="md" mb={2} color="primary.800">
@@ -15,13 +25,14 @@ export function Meetings() {
         showsHorizontalScrollIndicator={false}
       >
         <HStack space={2}>
-          <TimeCard day="Domingo" times={['07:00 h', '-', '18:00 h']} />
-          <TimeCard day="Segunda" times={['07:00 h', '15:00 h', '19:00 h']} />
-          <TimeCard day="Terça" times={['07:00 h', '15:00 h', '19:00 h']} />
-          <TimeCard day="Quarta" times={['07:00 h', '15:00 h', '19:00 h']} />
-          <TimeCard day="Quinta" times={['07:00 h', '15:00 h', '19:00 h']} />
-          <TimeCard day="Sexta" times={['07:00 h', '15:00 h', '19:00 h']} />
-          <TimeCard day="Sábado" times={['-', '-', '-']} />
+          {renderMeetings.map(({ day, schedules }) => (
+            <TimeCard
+              key={day}
+              day={day}
+              times={schedules}
+              isLoading={isLoading}
+            />
+          ))}
         </HStack>
       </ScrollView>
     </Box>
