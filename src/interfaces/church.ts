@@ -1,4 +1,4 @@
-type DaysOfTheWeek =
+export type DaysOfTheWeek =
   | 'Domingo'
   | 'Segunda'
   | 'Terça'
@@ -7,7 +7,7 @@ type DaysOfTheWeek =
   | 'Sexta'
   | 'Sábado';
 
-interface IMeetings {
+export interface IMeetings {
   day: DaysOfTheWeek;
   schedules: [string, string, string];
 }

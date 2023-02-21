@@ -26,7 +26,10 @@ export function ChurchInfo() {
           description={churchData?.description || description_church}
         />
 
-        <Meetings />
+        <Meetings
+          meetings={churchData?.meetings}
+          isLoading={isLoadingChurchData}
+        />
 
         <PhotoGallery
           title="Galeria"
