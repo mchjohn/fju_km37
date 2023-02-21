@@ -6,8 +6,6 @@ import { duel_tribes } from '@constants/img_url';
 import { default_description_news } from '@constants/news';
 
 import { InfoCard } from '../InfoCard';
-import { Skeleton } from '../Skeleton';
-import { Transition } from '../Transition';
 
 type CarrouselProps = {
   news: INews[] | undefined;
@@ -27,28 +25,22 @@ function Carrousel({ news, isLoading }: CarrouselProps) {
       autoPlayInterval={5000}
       scrollAnimationDuration={1000}
       renderItem={({ index, item }) => (
-        <Transition>
-          <InfoCard
-            key={index}
-            url={item.image_url}
-            title={item.title}
-            description={item.description}
-          />
-        </Transition>
+        <InfoCard
+          key={index}
+          url={item.image_url}
+          title={item.title}
+          isLoading={isLoading}
+          description={item.description}
+        />
       )}
     />
   ) : (
-    <>
-      {isLoading ? (
-        <Skeleton />
-      ) : (
-        <InfoCard
-          url={duel_tribes}
-          title="load"
-          description={default_description_news}
-        />
-      )}
-    </>
+    <InfoCard
+      url={duel_tribes}
+      title="Duelo das Tribos"
+      isLoading={isLoading}
+      description={default_description_news}
+    />
   );
 }
 
