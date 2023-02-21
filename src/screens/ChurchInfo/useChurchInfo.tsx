@@ -5,10 +5,10 @@ import { QueryKeys } from '@services/QueryKeys';
 import { getChurchDataFromFirestore } from '@services/firebase/ChurchService';
 
 export function useChurchInfo() {
-  const { data: churchData, isLoading: isLoadingChurchInfo } = useQuery(
+  const { data: churchData, isLoading: isLoadingChurchData } = useQuery(
     [QueryKeys.CHURCH],
     getChurchDataFromFirestore,
   );
 
-  return { churchData, isLoadingChurchInfo };
+  return { churchData, isLoadingChurchData };
 }
