@@ -9,7 +9,12 @@ class NewsMapper {
       };
     });
 
+    const photos = domainChurch.photos.map(({ uri }) => {
+      return { uri };
+    });
+
     return {
+      photos,
       address: domainChurch.address,
       meetings: meetings,
       image_url: domainChurch.image_url,
@@ -25,7 +30,12 @@ class NewsMapper {
       };
     });
 
+    const photos = persistenceChurch.photos.map(({ uri }) => {
+      return { uri };
+    });
+
     return {
+      photos,
       address: persistenceChurch.address,
       meetings: meetings,
       image_url: persistenceChurch.image_url,

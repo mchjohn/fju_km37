@@ -12,7 +12,10 @@ export interface IMeetings {
   schedules: [string, string, string];
 }
 
+export type Photos = { uri: string }[];
+
 export interface IChurch {
+  photos: Photos;
   address: string;
   meetings: IMeetings[];
   image_url: string;

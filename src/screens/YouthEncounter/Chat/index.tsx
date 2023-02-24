@@ -1,11 +1,16 @@
 import { VStack } from 'native-base';
 
-import { avatar_fju, chat_photo } from '@constants/img_url';
+import { avatar_fju } from '@constants/img_url';
 
 import { ChatMessage } from '@components/ChatMessage';
 import { PhotoGallery } from '@components/PhotoGallery';
 
-export function Chat() {
+type ChatProps = {
+  photos: { uri: string }[];
+  isLoading: boolean;
+};
+
+export function Chat({ photos, isLoading }: ChatProps) {
   return (
     <VStack space={2} mb={8}>
       <ChatMessage
@@ -85,7 +90,7 @@ export function Chat() {
         uri={avatar_fju}
         message="Se liga só nas fotos que top!"
       >
-        <PhotoGallery uri1={chat_photo} uri2={chat_photo} />
+        <PhotoGallery photos={photos} isLoading={isLoading} />
       </ChatMessage>
     </VStack>
   );

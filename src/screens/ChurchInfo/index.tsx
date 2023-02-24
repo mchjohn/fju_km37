@@ -1,6 +1,6 @@
 import { Box, HStack, Heading, ScrollView } from 'native-base';
 
-import { youth_encounter, iurd_km37 } from '@constants/img_url';
+import { iurd_km37 } from '@constants/img_url';
 import { address_church, description_church } from '@constants/church';
 
 import { Header } from '@components/Header';
@@ -12,7 +12,7 @@ import { Meetings } from './Meetings';
 import { useChurchInfo } from './useChurchInfo';
 
 export function ChurchInfo() {
-  const { churchData, isLoadingChurchData } = useChurchInfo();
+  const { photos, churchData, isLoadingChurchData } = useChurchInfo();
 
   return (
     <Box pb={2} flex={1} bg="light.100">
@@ -33,8 +33,8 @@ export function ChurchInfo() {
 
         <PhotoGallery
           title="Galeria"
-          uri1={youth_encounter}
-          uri2={youth_encounter}
+          photos={photos}
+          isLoading={isLoadingChurchData}
         />
 
         <Box mt={4}>

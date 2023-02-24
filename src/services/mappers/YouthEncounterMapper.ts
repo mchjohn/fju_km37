@@ -1,5 +1,7 @@
+import { IYouthEncounter } from '@interfaces/youth_encounter';
+
 class YouthEncounterMapper {
-  toPersistence(domainYouthEncounter: any) {
+  toPersistence(domainYouthEncounter: IYouthEncounter) {
     return {
       image_url: domainYouthEncounter.image_url,
       information: {
@@ -11,7 +13,7 @@ class YouthEncounterMapper {
     };
   }
 
-  toDomain(persistenceYouthEncounter: any) {
+  toDomain(persistenceYouthEncounter: IYouthEncounter) {
     return {
       image_url: persistenceYouthEncounter.image_url,
       information: {
