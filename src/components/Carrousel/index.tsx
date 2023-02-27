@@ -21,8 +21,9 @@ function Carrousel({ news, isLoading }: CarrouselProps) {
       loop={news.length > 1}
       width={width - 32}
       height={194}
+      enabled={false}
       autoPlay={true}
-      autoPlayInterval={5000}
+      autoPlayInterval={3000}
       scrollAnimationDuration={1000}
       renderItem={({ index, item }) => (
         <InfoCard

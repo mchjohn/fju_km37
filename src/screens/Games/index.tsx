@@ -2,15 +2,24 @@ import { Box, Heading, ScrollView, VStack } from 'native-base';
 
 import TextGradient from '../../assets/imgs/chose_tribe_text.svg';
 
-import { chat_photo, iurd_km37 } from '@constants/img_url';
+import { default_chat_photo, default_chat_photo_2 } from '@constants/img_url';
 
 import { FlagsCard } from './FlagsCard';
+
 import { Header } from '@components/Header';
-import { PhotoGallery } from '@components/PhotoGallery';
 import { VideoGallery } from '@components/VideoGallery';
+import { PhotoGallery } from '@components/PhotoGallery';
 import { SliderComponent } from '@components/SliderComponent';
 
+const defaultImages = [
+  { uri: default_chat_photo },
+  { uri: default_chat_photo_2 },
+];
+
 export function Games() {
+  // TODO: const photos = gamesData?.photos ? gamesData.photos : defaultImages;
+  const photos = defaultImages;
+
   return (
     <Box flex={1}>
       <Header title="Duelo" />
@@ -34,15 +43,15 @@ export function Games() {
           <PhotoGallery
             title="Fotos"
             textColor="white"
-            uri1={chat_photo}
-            uri2={iurd_km37}
+            photos={photos}
+            isLoading={false}
           />
 
           <VideoGallery
             title="Vídeos"
             textColor="white"
-            uri1={chat_photo}
-            uri2={chat_photo}
+            uri1={default_chat_photo}
+            uri2={default_chat_photo_2}
           />
         </VStack>
       </ScrollView>

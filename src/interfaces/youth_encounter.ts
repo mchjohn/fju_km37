@@ -7,7 +7,7 @@ type DaysOfTheWeek =
   | 'Sexta'
   | 'Sábado';
 
-interface IYouthEncounter {
+export interface IYouthEncounter {
   image_url: string;
   information: {
     name: string;
@@ -16,5 +16,3 @@ interface IYouthEncounter {
     week_day: DaysOfTheWeek;
   };
 }
-
-export type { IYouthEncounter };
