@@ -29,6 +29,7 @@ export const theme = extendTheme({
     flag: {
       juda: '#182E31',
       benjamin: '#652D3D',
+      default: '#ffffff',
     },
     yellow: {
       200: '#EACA86',

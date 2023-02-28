@@ -1,7 +1,7 @@
-import { ITribes } from '@interfaces/tribes';
+import { ITribe } from '@interfaces/tribes';
 
 class TribesMapper {
-  toPersistence(domainTribes: ITribes[]) {
+  toPersistence(domainTribes: ITribe[]) {
     const tribe = domainTribes.map(({ name, owner, points, image_url }) => {
       return {
         name,
@@ -14,7 +14,7 @@ class TribesMapper {
     return tribe;
   }
 
-  toDomain(persistenceTribes: ITribes[]) {
+  toDomain(persistenceTribes: ITribe[]) {
     const tribe = persistenceTribes.map(
       ({ name, owner, points, image_url }) => {
         return {

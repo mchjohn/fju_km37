@@ -17,7 +17,7 @@ const defaultImages = [
 ];
 
 export function Games() {
-  const {} = useGames();
+  const { tribes } = useGames();
   // TODO: const photos = gamesData?.photos ? gamesData.photos : defaultImages;
   const photos = defaultImages;
 
@@ -37,9 +37,12 @@ export function Games() {
         showsVerticalScrollIndicator={false}
       >
         <VStack py={4} px={4} space={4}>
-          <FlagsCard />
+          <FlagsCard
+            uri_juda={tribes?.juda.image_url}
+            uri_benjamin={tribes?.benjamin.image_url}
+          />
 
-          <SliderComponent tribeInFirstPlace="benjamin" />
+          <SliderComponent juda={tribes?.juda} benjamin={tribes?.benjamin} />
 
           <PhotoGallery
             title="Fotos"
