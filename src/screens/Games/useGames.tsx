@@ -5,7 +5,7 @@ import { getTribesDataFromFirestore } from '@services/firebase/TribesService';
 import { useMemo } from 'react';
 
 export function useGames() {
-  const { data: tribesData } = useQuery(
+  const { data: tribesData, isLoading: loadingTribesData } = useQuery(
     [QueryKeys.TRIBES],
     getTribesDataFromFirestore,
   );
@@ -18,5 +18,5 @@ export function useGames() {
     }
   }, [tribesData]);
 
-  return { tribes };
+  return { tribes, loadingTribesData };
 }
