@@ -4,11 +4,12 @@ import TextGradient from '../../assets/imgs/chose_tribe_text.svg';
 
 import { default_chat_photo, default_chat_photo_2 } from '@constants/img_url';
 
-import { FlagsCard } from './FlagsCard';
-
 import { VideoGallery } from '@components/VideoGallery';
 import { PhotoGallery } from '@components/PhotoGallery';
 import { SliderComponent } from '@components/SliderComponent';
+
+import { useGames } from './useGames';
+import { FlagsCard } from './FlagsCard';
 
 const defaultImages = [
   { uri: default_chat_photo },
@@ -16,6 +17,7 @@ const defaultImages = [
 ];
 
 export function Games() {
+  const {} = useGames();
   // TODO: const photos = gamesData?.photos ? gamesData.photos : defaultImages;
   const photos = defaultImages;
 
