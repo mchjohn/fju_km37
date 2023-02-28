@@ -1,6 +1,8 @@
-import { Skeleton as NBSkeleton } from 'native-base';
+import { ISkeletonProps, Skeleton as NBSkeleton } from 'native-base';
 
-export function Skeleton() {
+type SkeletonProps = ISkeletonProps;
+
+export function Skeleton({ ...rest }: SkeletonProps) {
   return (
     <NBSkeleton
       mt={2}
@@ -8,6 +10,7 @@ export function Skeleton() {
       rounded="lg"
       endColor="gray.400"
       startColor="gray.300"
+      {...rest}
     />
   );
 }

@@ -5,7 +5,6 @@ import {
   Center,
   ZStack,
   Heading,
-  Skeleton,
   Pressable,
   useDisclose,
 } from 'native-base';
@@ -15,6 +14,7 @@ import { theme } from '@styles/theme';
 
 import { avatar_fju } from '@constants/img_url';
 
+import { Skeleton } from '@components/Skeleton';
 import { Transition } from '@components/Transition';
 
 type PhotoGalleryProps = {
@@ -41,7 +41,7 @@ export function PhotoGallery({
       )}
 
       {isLoading ? (
-        <Skeleton w={20} h={24} rounded={8} />
+        <Skeleton w={20} h={24} />
       ) : (
         <Transition>
           <Pressable onPress={onOpen}>
