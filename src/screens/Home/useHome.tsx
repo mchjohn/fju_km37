@@ -1,4 +1,5 @@
 import { useMemo } from 'react';
+import { useDisclose } from 'native-base';
 import { useQuery } from '@tanstack/react-query';
 
 import { QueryKeys } from '@services/QueryKeys';
@@ -9,6 +10,8 @@ import { getYouthEncounterDataFromFirestore } from '@services/firebase/YouthEnco
 import { parseVerseInfo, parseVerseText } from './utils/verse_the_day';
 
 export function useHome() {
+  const { isOpen, onOpen, onClose } = useDisclose();
+
   const { data: youthEncounterData } = useQuery(
     [QueryKeys.YOUTH_ENCOUNTER],
     getYouthEncounterDataFromFirestore,
@@ -35,5 +38,14 @@ export function useHome() {
     [verseOfTheDay],
   );
 
-  return { newsData, textVerse, verseInfo, isLoadingNews, youthEncounterData };
+  return {
+    isOpen,
+    newsData,
+    textVerse,
+    verseInfo,
+    isLoadingNews,
+    youthEncounterData,
+    onOpen,
+    onClose,
+  };
 }

@@ -9,6 +9,7 @@ type DaysOfTheWeek =
 
 export interface IYouthEncounter {
   image_url: string;
+  description: string;
   information: {
     name: string;
     day: number;

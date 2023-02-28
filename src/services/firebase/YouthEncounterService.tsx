@@ -12,7 +12,7 @@ export async function getYouthEncounterDataFromFirestore() {
   let youthEncounterData = {} as IYouthEncounter;
 
   doc.forEach(docData => {
-    if (!docData.exists) return {} as IYouthEncounter;
+    if (!docData.exists) return;
 
     youthEncounterData = YouthEncounterMapper.toDomain(
       docData.data() as IYouthEncounter,
@@ -25,15 +25,17 @@ export async function getYouthEncounterDataFromFirestore() {
 export async function getYouthEncounterPhotosFromFirestore() {
   const doc = await firestore().collection('youth-encounter-photos').get();
 
-  let youthEncounterData = [] as Photos;
+  let youthEncounterPhotoData = [] as Photos;
 
   doc.forEach(docData => {
-    if (!docData.exists) return {} as IYouthEncounter;
+    if (!docData.exists) return;
 
-    youthEncounterData = YouthEncounterPhotosMapper.toDomain(
-      docData.data() as Photos,
+    const { photos } = docData.data();
+
+    youthEncounterPhotoData = YouthEncounterPhotosMapper.toDomain(
+      photos as Photos,
     );
   });
 
-  return youthEncounterData;
+  return youthEncounterPhotoData;
 }

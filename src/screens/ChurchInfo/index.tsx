@@ -1,11 +1,15 @@
-import { Box, HStack, Heading, ScrollView } from 'native-base';
+import { Box, Heading, ScrollView } from 'native-base';
 
 import { iurd_km37 } from '@constants/img_url';
-import { address_church, description_church } from '@constants/church';
+import {
+  social_media,
+  address_church,
+  description_church,
+} from '@constants/church';
 
 import { Header } from '@components/Header';
 import { InfoCard } from '@components/InfoCard';
-import { SocialIcon } from '@components/SocialIcon';
+import { SocialMedia } from '@components/SocialMedia';
 import { PhotoGallery } from '@components/PhotoGallery';
 
 import { Meetings } from './Meetings';
@@ -42,11 +46,7 @@ export function ChurchInfo() {
             Redes
           </Heading>
 
-          <HStack space={1} alignItems="center">
-            <SocialIcon iconName="ios-logo-youtube" />
-            <SocialIcon iconName="ios-logo-instagram" />
-            <SocialIcon iconName="ios-logo-facebook" />
-          </HStack>
+          <SocialMedia socialMedia={social_media} />
         </Box>
       </ScrollView>
     </Box>

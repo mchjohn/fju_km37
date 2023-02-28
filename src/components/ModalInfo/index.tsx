@@ -26,7 +26,7 @@ export function ModalInfo({
           {title}
         </Modal.Header>
         <Modal.Body bg="primary.800" h="530px">
-          <Text color="white">{description?.replace(/["/"]/g, '\n\n')}</Text>
+          <Text color="white">{description?.replace(/[/]/g, '\n\n')}</Text>
         </Modal.Body>
       </Modal.Content>
     </Modal>
