@@ -1,8 +1,10 @@
-import { VStack } from 'native-base';
+import { Box, VStack } from 'native-base';
 
 import { avatar_fju } from '@constants/img_url';
+import { social_media_youth_encounter } from '@constants/youth_encounter';
 
 import { ChatMessage } from '@components/ChatMessage';
+import { SocialMedia } from '@components/SocialMedia';
 import { PhotoGallery } from '@components/PhotoGallery';
 
 type ChatProps = {
@@ -85,12 +87,23 @@ export function Chat({ photos, isLoading }: ChatProps) {
       />
 
       <ChatMessage
+        uri={avatar_fju}
         borderRadiusLeft={0}
         borderRadiusRight={8}
-        uri={avatar_fju}
         message="Se liga só nas fotos que top!"
       >
         <PhotoGallery photos={photos} isLoading={isLoading} />
+      </ChatMessage>
+
+      <ChatMessage
+        borderRadiusLeft={0}
+        borderRadiusRight={8}
+        uri={avatar_fju}
+        message="Segue nossas redes também, tem muita coisa top lá!"
+      >
+        <Box bg="white" p={2} maxW={32} rounded={8}>
+          <SocialMedia socialMedia={social_media_youth_encounter} />
+        </Box>
       </ChatMessage>
     </VStack>
   );
