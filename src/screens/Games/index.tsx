@@ -1,4 +1,4 @@
-import { Box, Heading, ScrollView, VStack } from 'native-base';
+import { Box, Center, Heading, ScrollView, VStack } from 'native-base';
 
 import TextGradient from '../../assets/imgs/chose_tribe_text.svg';
 
@@ -6,7 +6,6 @@ import { default_chat_photo, default_chat_photo_2 } from '@constants/img_url';
 
 import { FlagsCard } from './FlagsCard';
 
-import { Header } from '@components/Header';
 import { VideoGallery } from '@components/VideoGallery';
 import { PhotoGallery } from '@components/PhotoGallery';
 import { SliderComponent } from '@components/SliderComponent';
@@ -22,7 +21,13 @@ export function Games() {
 
   return (
     <Box flex={1}>
-      <Header title="Duelo" />
+      <Heading color="primary.800" fontSize="lg" px={4} py={2}>
+        Duelo das Tribos
+      </Heading>
+
+      <Center py={4}>
+        <TextGradient />
+      </Center>
 
       <ScrollView
         bg="primary.800"
@@ -30,12 +35,6 @@ export function Games() {
         showsVerticalScrollIndicator={false}
       >
         <VStack py={4} px={4} space={4}>
-          <Heading color="white" fontSize="lg">
-            Duelo das Tribos
-          </Heading>
-
-          <TextGradient />
-
           <FlagsCard />
 
           <SliderComponent tribeInFirstPlace="benjamin" />
