@@ -1,10 +1,10 @@
+import { Pressable } from 'react-native';
 import { Box, AspectRatio, Center, Image } from 'native-base';
 
 import { IYouthEncounter } from '@interfaces/youth_encounter';
 
 import { Skeleton } from '@components/Skeleton';
 import { Transition } from '@components/Transition';
-import { Pressable } from 'react-native';
 
 type CardProps = {
   info: IYouthEncounter | undefined;

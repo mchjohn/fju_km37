@@ -1,15 +1,15 @@
-import { Box, Heading, ScrollView, VStack } from 'native-base';
+import { Box, Center, Heading, ScrollView, VStack } from 'native-base';
 
 import TextGradient from '../../assets/imgs/chose_tribe_text.svg';
 
 import { default_chat_photo, default_chat_photo_2 } from '@constants/img_url';
 
-import { FlagsCard } from './FlagsCard';
-
-import { Header } from '@components/Header';
 import { VideoGallery } from '@components/VideoGallery';
 import { PhotoGallery } from '@components/PhotoGallery';
 import { SliderComponent } from '@components/SliderComponent';
+
+import { useGames } from './useGames';
+import { FlagsCard } from './FlagsCard';
 
 const defaultImages = [
   { uri: default_chat_photo },
@@ -17,12 +17,19 @@ const defaultImages = [
 ];
 
 export function Games() {
+  const { tribes, loadingTribesData } = useGames();
   // TODO: const photos = gamesData?.photos ? gamesData.photos : defaultImages;
   const photos = defaultImages;
 
   return (
     <Box flex={1}>
-      <Header title="Duelo" />
+      <Heading color="primary.800" fontSize="lg" px={4} py={2}>
+        Duelo das Tribos
+      </Heading>
+
+      <Center py={4}>
+        <TextGradient />
+      </Center>
 
       <ScrollView
         bg="primary.800"
@@ -30,15 +37,17 @@ export function Games() {
         showsVerticalScrollIndicator={false}
       >
         <VStack py={4} px={4} space={4}>
-          <Heading color="white" fontSize="lg">
-            Duelo das Tribos
-          </Heading>
+          <FlagsCard
+            isLoading={loadingTribesData}
+            uri_juda={tribes?.juda.image_url}
+            uri_benjamin={tribes?.benjamin.image_url}
+          />
 
-          <TextGradient />
-
-          <FlagsCard />
-
-          <SliderComponent tribeInFirstPlace="benjamin" />
+          <SliderComponent
+            juda={tribes?.juda}
+            benjamin={tribes?.benjamin}
+            isLoading={loadingTribesData}
+          />
 
           <PhotoGallery
             title="Fotos"
