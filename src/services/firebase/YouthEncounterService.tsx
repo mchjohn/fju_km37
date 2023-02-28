@@ -3,8 +3,8 @@ import firestore from '@react-native-firebase/firestore';
 import { Photos } from '@interfaces/church';
 import { IYouthEncounter } from '@interfaces/youth_encounter';
 
+import PhotosMapper from '@services/mappers/PhotosMapper';
 import YouthEncounterMapper from '@services/mappers/YouthEncounterMapper';
-import YouthEncounterPhotosMapper from '@services/mappers/YouthEncounterPhotosMapper';
 
 export async function getYouthEncounterDataFromFirestore() {
   const doc = await firestore().collection('youth-encounter').get();
@@ -32,9 +32,7 @@ export async function getYouthEncounterPhotosFromFirestore() {
 
     const { photos } = docData.data();
 
-    youthEncounterPhotoData = YouthEncounterPhotosMapper.toDomain(
-      photos as Photos,
-    );
+    youthEncounterPhotoData = PhotosMapper.toDomain(photos as Photos);
   });
 
   return youthEncounterPhotoData;
