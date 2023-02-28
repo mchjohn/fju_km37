@@ -11,15 +11,8 @@ import { SliderComponent } from '@components/SliderComponent';
 import { useGames } from './useGames';
 import { FlagsCard } from './FlagsCard';
 
-const defaultImages = [
-  { uri: default_chat_photo },
-  { uri: default_chat_photo_2 },
-];
-
 export function Games() {
-  const { tribes, loadingTribesData } = useGames();
-  // TODO: const photos = gamesData?.photos ? gamesData.photos : defaultImages;
-  const photos = defaultImages;
+  const { tribes, loadingTribesData, photos, loadingTribesPhotos } = useGames();
 
   return (
     <Box flex={1}>
@@ -51,9 +44,9 @@ export function Games() {
 
           <PhotoGallery
             title="Fotos"
-            textColor="white"
             photos={photos}
-            isLoading={false}
+            textColor="white"
+            isLoading={loadingTribesPhotos}
           />
 
           <VideoGallery
