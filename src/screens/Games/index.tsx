@@ -4,9 +4,9 @@ import TextGradient from '../../assets/imgs/chose_tribe_text.svg';
 
 import { default_chat_photo, default_chat_photo_2 } from '@constants/img_url';
 
+import { Scoreboard } from '@components/Scoreboard';
 import { VideoGallery } from '@components/VideoGallery';
 import { PhotoGallery } from '@components/PhotoGallery';
-import { SliderComponent } from '@components/SliderComponent';
 
 import { useGames } from './useGames';
 import { FlagsCard } from './FlagsCard';
@@ -36,7 +36,7 @@ export function Games() {
             uri_benjamin={tribes?.benjamin.image_url}
           />
 
-          <SliderComponent
+          <Scoreboard
             juda={tribes?.juda}
             benjamin={tribes?.benjamin}
             isLoading={loadingTribesData}
