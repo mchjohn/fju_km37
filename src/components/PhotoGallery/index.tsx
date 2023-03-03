@@ -65,7 +65,7 @@ export function PhotoGallery({
                   />
                   <Center bg="black" opacity={0.8} size="24" rounded="lg" />
                   <Text color="white" fontSize="2xl" fontWeight="700">
-                    +8
+                    +{photos.length}
                   </Text>
                 </ZStack>
               </Center>
