@@ -1,7 +1,7 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import { Home } from '@screens/Home';
-import { Games } from '@screens/Games';
+import { DuelOfTribes } from '@screens/DuelOfTribes';
 
 import { PropsNavigationBottom } from './Models';
 import { options, screenIcon } from './config/options';
@@ -19,8 +19,8 @@ export function PrivateNavigation() {
         }}
       />
       <Screen
-        name="Games"
-        component={Games}
+        name="DuelOfTribes"
+        component={DuelOfTribes}
         options={{
           tabBarIcon: ({ color, size }) =>
             screenIcon('game-controller', color, size),

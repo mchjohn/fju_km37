@@ -14,7 +14,7 @@ const defaultImages = [
   { uri: default_chat_photo_2 },
 ];
 
-export function useGames() {
+export function useDuelOfTribes() {
   const { data: tribesPhotos, isLoading: loadingTribesPhotos } = useQuery(
     [QueryKeys.TRIBES_PHOTOS],
     getTribesPhotosFromFirestore,

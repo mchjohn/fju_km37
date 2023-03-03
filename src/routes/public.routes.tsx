@@ -1,8 +1,8 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import { Home } from '@screens/Home/index';
-import { Games } from '@screens/Games';
 import { ChurchInfo } from '@screens/ChurchInfo';
+import { DuelOfTribes } from '@screens/DuelOfTribes';
 import { YouthEncounter } from '@screens/YouthEncounter';
 
 import { PropsNavigationBottom } from './Models';
@@ -28,8 +28,8 @@ export function PublicNavigation() {
         }}
       />
       <Screen
-        name="Games"
-        component={Games}
+        name="DuelOfTribes"
+        component={DuelOfTribes}
         options={{
           tabBarIcon: ({ color, size }) =>
             screenIcon('game-controller', color, size),

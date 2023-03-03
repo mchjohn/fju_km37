@@ -8,11 +8,12 @@ import { Scoreboard } from '@components/Scoreboard';
 import { VideoGallery } from '@components/VideoGallery';
 import { PhotoGallery } from '@components/PhotoGallery';
 
-import { useGames } from './useGames';
 import { FlagsCard } from './FlagsCard';
+import { useDuelOfTribes } from './useDuelOfTribes';
 
-export function Games() {
-  const { tribes, loadingTribesData, photos, loadingTribesPhotos } = useGames();
+export function DuelOfTribes() {
+  const { tribes, loadingTribesData, photos, loadingTribesPhotos } =
+    useDuelOfTribes();
 
   return (
     <Box flex={1}>
