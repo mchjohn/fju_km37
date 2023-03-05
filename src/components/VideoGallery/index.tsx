@@ -1,43 +1,49 @@
-import { HStack, Image, Box, Heading } from 'native-base';
+import { Box, Button, HStack, Heading } from 'native-base';
+
+import { SocialIcon } from '@components/SocialIcon';
+import { useNavigation } from '@react-navigation/native';
 
 type VideoGalleryProps = {
-  uri1: string;
-  uri2: string;
-  title?: string;
+  ids: string[];
   textColor?: string;
 };
 
 export function VideoGallery({
-  uri1,
-  uri2,
-  title,
+  ids,
   textColor = 'primary.800',
 }: VideoGalleryProps) {
+  const { navigate } = useNavigation();
+
+  function handleGoToVideoPlayer(id: string) {
+    navigate('Stack', {
+      screen: 'VideoPlayer',
+      params: {
+        id,
+      },
+    });
+  }
+
   return (
     <Box>
-      {title && (
-        <Heading mt={4} mb={2} size="md" color={textColor}>
-          {title}
-        </Heading>
-      )}
+      <Heading mt={4} mb={2} size="md" color={textColor}>
+        Vídeos
+      </Heading>
 
       <HStack space={2}>
-        <Image
-          source={{
-            uri: uri1,
-          }}
-          alt="Jovens louvando a Deus"
-          size="lg"
-          rounded={8}
-        />
-        <Image
-          source={{
-            uri: uri2,
-          }}
-          alt="Jovens louvando a Deus"
-          size="lg"
-          rounded={8}
-        />
+        {ids.map(id => (
+          <Button
+            key={id}
+            bg="black"
+            width={32}
+            height={24}
+            rounded="lg"
+            alignItems="center"
+            justifyContent="center"
+            onPress={() => handleGoToVideoPlayer(id)}
+          >
+            <SocialIcon iconName="ios-logo-youtube" />
+          </Button>
+        ))}
       </HStack>
     </Box>
   );
