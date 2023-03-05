@@ -10,8 +10,14 @@ import { FlagsCard } from './FlagsCard';
 import { useDuelOfTribes } from './useDuelOfTribes';
 
 export function DuelOfTribes() {
-  const { tribes, loadingTribesData, photos, loadingTribesPhotos } =
-    useDuelOfTribes();
+  const {
+    tribes,
+    photos,
+    videos,
+    loadingTribesData,
+    loadingTribesPhotos,
+    loadingTribesVideos,
+  } = useDuelOfTribes();
 
   return (
     <Box flex={1}>
@@ -49,7 +55,8 @@ export function DuelOfTribes() {
           />
 
           <VideoGallery
-            ids={['6IKxXe9gun8', 'ncLqWzAyJN0']}
+            ids={videos}
+            isLoading={loadingTribesVideos}
             textColor="white"
           />
         </VStack>

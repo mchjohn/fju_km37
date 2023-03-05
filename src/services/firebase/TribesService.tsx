@@ -1,10 +1,11 @@
 import firestore from '@react-native-firebase/firestore';
 
-import { ITribe } from '@interfaces/tribes';
 import { Photos } from '@interfaces/church';
+import { ITribe, Videos } from '@interfaces/tribes';
 
 import TribesMapper from '@services/mappers/TribesMapper';
 import PhotosMapper from '@services/mappers/PhotosMapper';
+import VideosMapper from '@services/mappers/VideosMapper';
 
 export async function getTribesDataFromFirestore() {
   const doc = await firestore().collection('duel-tribes').get();
@@ -38,4 +39,20 @@ export async function getTribesPhotosFromFirestore() {
   });
 
   return tribesPhotoData;
+}
+
+export async function getDuelTribesVideosFromFirestore() {
+  const doc = await firestore().collection('duel-tribes-videos').get();
+
+  let duelTribesVideosData = [] as Videos;
+
+  doc.forEach(docData => {
+    if (!docData.exists) return;
+
+    const { videos } = docData.data();
+
+    duelTribesVideosData = VideosMapper.toDomain(videos as Videos);
+  });
+
+  return duelTribesVideosData;
 }
