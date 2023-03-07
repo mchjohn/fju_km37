@@ -2,8 +2,6 @@ import { Box, Center, Heading, ScrollView, VStack } from 'native-base';
 
 import TextGradient from '../../assets/imgs/chose_tribe_text.svg';
 
-import { default_chat_photo, default_chat_photo_2 } from '@constants/img_url';
-
 import { Scoreboard } from '@components/Scoreboard';
 import { VideoGallery } from '@components/VideoGallery';
 import { PhotoGallery } from '@components/PhotoGallery';
@@ -12,8 +10,14 @@ import { FlagsCard } from './FlagsCard';
 import { useDuelOfTribes } from './useDuelOfTribes';
 
 export function DuelOfTribes() {
-  const { tribes, loadingTribesData, photos, loadingTribesPhotos } =
-    useDuelOfTribes();
+  const {
+    tribes,
+    photos,
+    videos,
+    loadingTribesData,
+    loadingTribesPhotos,
+    loadingTribesVideos,
+  } = useDuelOfTribes();
 
   return (
     <Box flex={1}>
@@ -51,10 +55,9 @@ export function DuelOfTribes() {
           />
 
           <VideoGallery
-            title="Vídeos"
+            ids={videos}
+            isLoading={loadingTribesVideos}
             textColor="white"
-            uri1={default_chat_photo}
-            uri2={default_chat_photo_2}
           />
         </VStack>
       </ScrollView>

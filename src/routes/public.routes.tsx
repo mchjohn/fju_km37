@@ -5,6 +5,7 @@ import { ChurchInfo } from '@screens/ChurchInfo';
 import { DuelOfTribes } from '@screens/DuelOfTribes';
 import { YouthEncounter } from '@screens/YouthEncounter';
 
+import { StackNavigator } from './stack';
 import { PropsNavigationBottom } from './Models';
 import { options, screenIcon } from './config/options';
 
@@ -42,6 +43,7 @@ export function PublicNavigation() {
           tabBarIcon: ({ color, size }) => screenIcon('location', color, size),
         }}
       />
+      <Screen name="Stack" component={StackNavigator} />
     </Navigator>
   );
 }

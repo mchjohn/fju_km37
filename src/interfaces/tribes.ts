@@ -1,3 +1,5 @@
+export type Videos = { id: string }[];
+
 export interface ITribe {
   name: 'Benjamin' | 'Judá';
   owner: string;
