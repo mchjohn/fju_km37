@@ -43,7 +43,14 @@ export function PublicNavigation() {
           tabBarIcon: ({ color, size }) => screenIcon('location', color, size),
         }}
       />
-      <Screen name="Stack" component={StackNavigator} />
+      <Screen
+        name="Stack"
+        component={StackNavigator}
+        options={{
+          tabBarIcon: () => null,
+          tabBarStyle: { display: 'none' },
+        }}
+      />
     </Navigator>
   );
 }

@@ -1,7 +1,11 @@
 import { Icon } from 'native-base';
+import { Dimensions } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
 import { theme } from '@styles/theme';
+
+const width = Dimensions.get('window').width;
+const tabSpace = width / 25;
 
 export const options = {
   headerShown: false,
@@ -11,6 +15,7 @@ export const options = {
   tabBarStyle: {
     height: 58,
     elevation: 0,
+    paddingLeft: `${tabSpace}%`,
     backgroundColor: theme.colors.primary[800],
   },
 };

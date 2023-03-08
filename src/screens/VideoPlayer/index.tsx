@@ -1,8 +1,18 @@
-import { Dimensions } from 'react-native';
-import { useCallback, useState } from 'react';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 import YoutubePlayer from 'react-native-youtube-iframe';
+import { Dimensions } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import { Center, VStack, Heading, Spinner, ZStack } from 'native-base';
+import { useCallback, useState } from 'react';
+import {
+  Box,
+  Icon,
+  Center,
+  VStack,
+  ZStack,
+  Button,
+  Heading,
+  Spinner,
+} from 'native-base';
 
 import { PropsScreenStack } from '@routes/Models';
 
@@ -24,31 +34,55 @@ export function VideoPlayer({ route }: PropsScreenStack) {
     [navigate],
   );
 
-  return (
-    <Center flex={1} bg="primary.800">
-      <ZStack alignItems="center" justifyContent="center">
-        <YoutubePlayer
-          play={playing}
-          width={width}
-          height={ready ? 400 : 0}
-          videoId={route.params.id}
-          onChangeState={onStateChange}
-          onReady={() => setReady(true)}
-        />
+  function handleGoBack() {
+    setPlaying(false);
+    navigate('DuelOfTribes');
+  }
 
-        {!ready && (
-          <VStack space={2} justifyContent="center">
-            <Spinner
-              size="lg"
-              color="red.600"
-              accessibilityLabel="Carregando vídeo"
-            />
-            <Heading color="red.600" fontSize="md">
-              Calma jovem, estamos carregando o vídeo...
-            </Heading>
-          </VStack>
-        )}
-      </ZStack>
-    </Center>
+  return (
+    <Box flex={1} bg="primary.800">
+      <Button
+        m={4}
+        maxW="1/4"
+        justifyContent="flex-start"
+        leftIcon={
+          <Icon
+            as={Ionicons}
+            size="lg"
+            name="md-arrow-back-sharp"
+            color="white"
+          />
+        }
+        onPress={handleGoBack}
+      >
+        Voltar
+      </Button>
+
+      <Center flex={1}>
+        <ZStack alignItems="center" justifyContent="center">
+          <YoutubePlayer
+            play={playing}
+            width={width}
+            height={ready ? 400 : 0}
+            videoId={route.params.id}
+            onReady={() => setReady(true)}
+            onChangeState={onStateChange}
+          />
+
+          {!ready && (
+            <VStack space={2} justifyContent="center">
+              <Spinner
+                size="lg"
+                color="red.600"
+                accessibilityLabel="Carregando vídeo"
+              />
+              <Heading color="red.600" fontSize="md">
+                Calma jovem, estamos carregando o vídeo...
+              </Heading>
+            </VStack>
+          )}
+        </ZStack>
+      </Center>
+    </Box>
   );
 }
